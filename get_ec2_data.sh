@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# get instance data
 url_prefix=http://169.254.169.254/latest
 ec2_instance_id=`/usr/bin/curl ${url_prefix}/meta-data/instance-id/ --stderr /dev/null`
 ec2_region=`/usr/bin/curl ${url_prefix}/meta-data/public-hostname --stderr /dev/null | awk -F . '{print $2}'`
